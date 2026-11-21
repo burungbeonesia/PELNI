@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0A3D62">
+  <meta name="description" content="BURUNGBEO Travel - Tiket Kapal PELNI, Ferry dan Pesawat.">
+  <title>BURUNGBEO Travel | Tiket Kapal & Pesawat</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width:100%; height:100%; margin:0; }
+    body { font-family:Arial,Helvetica,sans-serif; background:#f3f6fa; color:#0A3D62; }
+    .shell { height:100%; display:flex; flex-direction:column; }
+    header {
+      min-height:58px; padding:9px 16px; display:flex; align-items:center;
+      justify-content:space-between; gap:12px; color:#fff;
+      background:linear-gradient(110deg,#06263E,#0A3D62,#1E90FF);
+    }
+    .brand { font-weight:800; letter-spacing:.3px; }
+    .tagline { margin-top:3px; font-size:11px; opacity:.85; }
+    .links { display:flex; gap:8px; flex-wrap:wrap; }
+    .links a {
+      display:inline-block; text-decoration:none; color:#0A3D62; background:#fff;
+      padding:9px 12px; border-radius:8px; font-size:12px; font-weight:700;
+    }
+    .stage { flex:1; min-height:0; position:relative; }
+    iframe { width:100%; height:100%; border:0; display:block; background:#fff; }
+    .fallback {
+      display:none; position:absolute; inset:0; padding:24px; align-items:center;
+      justify-content:center; text-align:center; background:#fff;
+    }
+    .fallback div { max-width:520px; }
+    .fallback h1 { font-size:20px; margin:0 0 10px; }
+    .fallback p { color:#526579; line-height:1.6; font-size:14px; }
+    .fallback a { color:#0879c9; font-weight:700; }
+    @media(max-width:560px) {
+      header { align-items:flex-start; flex-direction:column; }
+      .links { width:100%; }
+      .links a { flex:1; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div>
+        <div class="brand">CV. BURUNG BEO TRAVEL</div>
+        <div class="tagline">Tiket Kapal PELNI • Ferry • Pesawat</div>
+      </div>
+      <nav class="links" aria-label="Navigasi aplikasi">
+        <a href="https://script.google.com/macros/s/AKfycbx3Gjl0JDWDoFGcJABqnUVvjl_q6DTVT6_7MIYejN66nfSVLkHhlb09vSbL8FC_o0ZQ/exec" target="_blank" rel="noopener">Buka aplikasi langsung ↗</a>
+        <a href="https://script.google.com/macros/s/AKfycbx3Gjl0JDWDoFGcJABqnUVvjl_q6DTVT6_7MIYejN66nfSVLkHhlb09vSbL8FC_o0ZQ/exec?page=admin" target="_blank" rel="noopener">Buka panel admin ↗</a>
+      </nav>
+    </header>
+    <main class="stage">
+      <iframe
+        id="travelApp"
+        title="Aplikasi CV. BURUNG BEO TRAVEL"
+        src="https://script.google.com/macros/s/AKfycbx3Gjl0JDWDoFGcJABqnUVvjl_q6DTVT6_7MIYejN66nfSVLkHhlb09vSbL8FC_o0ZQ/exec"
+        allow="clipboard-read; clipboard-write"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+      <section class="fallback" id="fallback">
+        <div>
+          <h1>Aplikasi tidak dapat ditampilkan di dalam halaman GitHub</h1>
+          <p>Silakan buka aplikasi melalui tautan berikut. Pastikan Web App Google Apps Script sudah di-deploy dengan akses yang sesuai.</p>
+          <p><a href="https://script.google.com/macros/s/AKfycbx3Gjl0JDWDoFGcJABqnUVvjl_q6DTVT6_7MIYejN66nfSVLkHhlb09vSbL8FC_o0ZQ/exec" target="_blank" rel="noopener">Buka BURUNGBEO Travel di Google Apps Script ↗</a></p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    // GitHub Pages bertindak sebagai halaman pembungkus.
+    // Seluruh fitur (login, jadwal, unggah gambar, dan CMS) tetap dijalankan
+    // oleh aplikasi Google Apps Script di dalam iframe.
+    const appFrame = document.getElementById('travelApp');
+    const fallback = document.getElementById('fallback');
+    let loaded = false;
+    appFrame.addEventListener('load', function () {
+      loaded = true;
+      fallback.style.display = 'none';
+    });
+    window.setTimeout(function () {
+      if (!loaded) fallback.style.display = 'flex';
+    }, 15000);
+  </script>
+</body>
+</html>
